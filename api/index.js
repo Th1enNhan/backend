@@ -52,7 +52,7 @@ app.get('/api/technicians', async (req, res) => {
 
 app.get('/api/services', async (req, res) => {
     try {
-        const services = await loadData('services.json');
+        const services = await loadData('./services.json');
         res.status(200).json(services);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching services', error: error.message });
