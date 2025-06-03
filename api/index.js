@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs').promises;
 const crypto = require('crypto');
+const technicians = require('./technicians.json');
+const services_file = require('./services.json')
 
 const app = express();
 
@@ -52,7 +54,7 @@ app.get('/api/technicians', async (req, res) => {
 
 app.get('/api/services', async (req, res) => {
     try {
-        const services = await loadData("services.json");
+        const services = services_file;
         res.status(200).json(services);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching services', error: error.message });
