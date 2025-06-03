@@ -1,9 +1,12 @@
 const express = require('express');
+const path = require('path')
 const cors = require('cors');
 const fs = require('fs').promises;
 const crypto = require('crypto');
-const technicians = require('./technicians.json');
+const technicians_file = require('./technicians.json');
 const services_file = require('./services.json')
+const bookings_file = require('./bookings.json')
+const users_file = require('./users.json')
 
 const app = express();
 
@@ -45,7 +48,7 @@ function hashPassword(password) {
 
 app.get('/api/technicians', async (req, res) => {
     try {
-        const technicians = await loadData("technicians.json");
+        const technicians = technicians_file;
         res.status(200).json(technicians);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching technicians', error: error.message });
@@ -68,7 +71,7 @@ app.post('/api/signup', async (req, res) => {
             return res.status(400).json({ message: 'Missing required fields' });
         }
 
-        const users = await loadData('users.json');
+        const users = users_file;
         if (users.find(u => u.email === email)) {
             return res.status(400).json({ message: 'Email already exists' });
         }
@@ -82,8 +85,8 @@ app.post('/api/signup', async (req, res) => {
             createdAt: new Date().toISOString()
         };
         users.push(user);
-
-        await saveData('users.json', users);
+        const USERS_PATH = path.join(__dirname, 'users.json');
+        await saveData(USERS_PATH, users);
         res.status(201).json({ message: 'Sign-up successful', userId: user.id });
     } catch (error) {
         console.error(`[${new Date().toISOString()}] Error in /api/signup:`, error.message);
@@ -98,7 +101,7 @@ app.post('/api/signin', async (req, res) => {
             return res.status(400).json({ message: 'Missing email or password' });
         }
 
-        const users = await loadData('users.json');
+        const users = users_file;
         const user = users.find(u => u.email === email && u.password === hashPassword(password));
         if (!user) {
             return res.status(401).json({ message: 'Invalid email or password' });
@@ -118,7 +121,7 @@ app.post('/api/book', async (req, res) => {
             return res.status(400).json({ message: 'Missing required fields for booking' });
         }
 
-        const bookings = await loadData('bookings.json');
+        const bookings = bookings_file;
         const booking = {
             id: bookings.length > 0 ? Math.max(...bookings.map(b => b.id)) + 1 : 1,
             technicianId,
@@ -135,8 +138,8 @@ app.post('/api/book', async (req, res) => {
             createdAt: new Date().toISOString()
         };
         bookings.push(booking);
-
-        await saveData('bookings.json', bookings);
+        const BOOKINGS_PATH = path.join(__dirname, 'bookings.json');
+        await saveData(BOOKINGS_PATH, bookings);
         res.status(201).json({ message: 'Booking confirmed!', booking });
     } catch (error) {
         console.error(`[${new Date().toISOString()}] Error in /api/book:`, error.message);
@@ -150,7 +153,7 @@ app.get('/api/user/:id', async (req, res) => {
         if (isNaN(userId)) {
             return res.status(400).json({ message: 'Invalid user ID' });
         }
-        const users = await loadData('users.json');
+        const users = users_file;
         const user = users.find(u => u.id === userId);
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
@@ -167,7 +170,7 @@ app.get('/api/user/:id/bookings', async (req, res) => {
         if (isNaN(userId)) {
             return res.status(400).json({ message: 'Invalid user ID' });
         }
-        const bookings = await loadData('bookings.json');
+        const bookings = bookings_file;
         const userBookings = bookings.filter(b => b.userId === userId);
         res.status(200).json(userBookings);
     } catch (error) {
