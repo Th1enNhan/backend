@@ -43,7 +43,120 @@ function hashPassword(password) {
 
 app.get('/api/technicians', async (req, res) => {
     try {
-        const technicians = await loadData('technicians.json');
+        const technicians = [
+  {
+    "id": 1,
+    "name": "Nguyễn Văn Minh",
+    "image": "https://cdn-icons-png.flaticon.com/512/6008/6008806.png",
+    "experience": 10,
+    "services": "Sửa chữa điện, lắp đặt hệ thống điện",
+    "rating": 4.8,
+    "district": "district1",
+    "specialties": ["electrical"],
+    "priceAdjustment": 1.2,
+    "bio": "Chuyên gia điện với hơn 10 năm kinh nghiệm, chuyên sửa chữa và lắp đặt hệ thống điện dân dụng.",
+    "reviews": [
+      {
+        "name": "Trần Thị Hương",
+        "date": "2025-04-15",
+        "rating": 5,
+        "comment": "Rất chuyên nghiệp, sửa chập điện nhanh chóng!"
+      },
+      {
+        "name": "Lê Văn Nam",
+        "date": "2025-05-01",
+        "rating": 4.5,
+        "comment": "Tốt, nhưng đến hơi trễ 10 phút."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Trần Văn Hùng",
+    "image": "https://cdn-icons-png.flaticon.com/512/6008/6008808.png",
+    "experience": 8,
+    "services": "Sửa chữa ống nước, thông cống",
+    "rating": 4.6,
+    "district": "district7",
+    "specialties": ["plumbing"],
+    "priceAdjustment": 1.1,
+    "bio": "Thợ sửa ống nước lành nghề, chuyên xử lý rò rỉ và thông nghẹt nhanh chóng.",
+    "reviews": [
+      {
+        "name": "Phạm Thị Lan",
+        "date": "2025-03-20",
+        "rating": 4.5,
+        "comment": "Sửa vòi nước rò rỉ rất tốt, giá hợp lý."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Lê Thị Mai",
+    "image": "https://cdn-icons-png.flaticon.com/512/6008/6008810.png",
+    "experience": 12,
+    "services": "Sửa máy lạnh, tủ lạnh, máy giặt",
+    "rating": 4.9,
+    "district": "districtBThanh",
+    "specialties": ["hvac"],
+    "priceAdjustment": 1.3,
+    "bio": "Kỹ thuật viên điện lạnh với 12 năm kinh nghiệm, chuyên sửa chữa và bảo trì thiết bị gia dụng.",
+    "reviews": [
+      {
+        "name": "Ngô Văn Tâm",
+        "date": "2025-05-10",
+        "rating": 5,
+        "comment": "Vệ sinh máy lạnh sạch sẽ, rất hài lòng!"
+      },
+      {
+        "name": "Vũ Thị Hồng",
+        "date": "2025-04-25",
+        "rating": 4.8,
+        "comment": "Sửa tủ lạnh nhanh, nhưng giá hơi cao."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Phạm Quốc Anh",
+    "image": "https://cdn-icons-png.flaticon.com/512/6008/6008807.png",
+    "experience": 6,
+    "services": "Sửa chữa điện, đi dây điện mới",
+    "rating": 4.5,
+    "district": "district3",
+    "specialties": ["electrical"],
+    "priceAdjustment": 1.0,
+    "bio": "Thợ điện trẻ, nhiệt tình, chuyên sửa chữa và lắp đặt điện dân dụng.",
+    "reviews": [
+      {
+        "name": "Đỗ Thị Thu",
+        "date": "2025-05-05",
+        "rating": 4.5,
+        "comment": "Thay bóng đèn nhanh, thái độ tốt."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Võ Thanh Tùng",
+    "image": "https://cdn-icons-png.flaticon.com/512/6008/6008809.png",
+    "experience": 9,
+    "services": "Sửa bồn cầu, lắp máy nước nóng",
+    "rating": 4.7,
+    "district": "district10",
+    "specialties": ["plumbing"],
+    "priceAdjustment": 1.15,
+    "bio": "Chuyên gia sửa chữa hệ thống nước, đảm bảo chất lượng và nhanh chóng.",
+    "reviews": [
+      {
+        "name": "Hoàng Văn Long",
+        "date": "2025-04-30",
+        "rating": 4.5,
+        "comment": "Sửa bồn cầu tốt, nhưng cần báo giá rõ hơn."
+      }
+    ]
+  }
+];
         res.status(200).json(technicians);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching technicians', error: error.message });
