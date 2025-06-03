@@ -1,0 +1,134 @@
+{
+  "electrical": [
+    {
+      "id": 1,
+      "name": "Sửa ổ cắm, công tắc bị hỏng",
+      "price": 80000,
+      "notes": "Phụ phí nếu thay mới linh kiện."
+    },
+    {
+      "id": 2,
+      "name": "Thay bóng đèn, đèn LED",
+      "price": 50000,
+      "notes": "Chưa bao gồm giá bóng đèn."
+    },
+    {
+      "id": 3,
+      "name": "Sửa chập điện, mất điện cục bộ",
+      "price": 150000,
+      "notes": "Giá có thể thay đổi tùy mức độ phức tạp."
+    },
+    {
+      "id": 4,
+      "name": "Đi dây điện mới (trong nhà)",
+      "price": 300000,
+      "notes": "Giá khởi điểm, tùy thuộc diện tích."
+    },
+    {
+      "id": 5,
+      "name": "Kiểm tra & sửa CB, aptomat",
+      "price": 100000,
+      "notes": "Bao gồm kiểm tra an toàn điện."
+    },
+    {
+      "id": 6,
+      "name": "Thi công điện âm tường",
+      "price": 500000,
+      "notes": "Giá khởi điểm, báo giá chi tiết sau khảo sát."
+    },
+    {
+      "id": 7,
+      "name": "Sửa quạt điện, máy nước nóng",
+      "price": 120000,
+      "notes": "Phụ phí nếu thay linh kiện."
+    },
+    {
+      "id": 8,
+      "name": "Kiểm tra rò điện, đo tải",
+      "price": 90000,
+      "notes": "Báo cáo chi tiết sau kiểm tra."
+    }
+  ],
+  "plumbing": [
+    {
+      "id": 9,
+      "name": "Sửa vòi nước rò rỉ",
+      "price": 100000,
+      "notes": "Phụ phí nếu thay vòi mới."
+    },
+    {
+      "id": 10,
+      "name": "Thông nghẹt bồn rửa, lavabo",
+      "price": 150000,
+      "notes": "Giá có thể tăng nếu nghẹt nặng."
+    },
+    {
+      "id": 11,
+      "name": "Lắp đặt máy nước nóng",
+      "price": 200000,
+      "notes": "Chưa bao gồm thiết bị."
+    },
+    {
+      "id": 12,
+      "name": "Thay ống nước bị bể",
+      "price": 180000,
+      "notes": "Giá tùy thuộc chiều dài ống."
+    },
+    {
+      "id": 13,
+      "name": "Sửa bồn cầu rò rỉ",
+      "price": 130000,
+      "notes": "Phụ phí nếu thay phụ kiện."
+    }
+  ],
+  "hvac": [
+    {
+      "id": 14,
+      "name": "Sửa máy lạnh không lạnh, chảy nước",
+      "price": 250000,
+      "notes": "Bao gồm kiểm tra gas."
+    },
+    {
+      "id": 15,
+      "name": "Bơm gas, vệ sinh máy lạnh",
+      "price": 300000,
+      "notes": "Giá gas tùy loại."
+    },
+    {
+      "id": 16,
+      "name": "Sửa tủ lạnh không làm lạnh",
+      "price": 350000,
+      "notes": "Phụ phí nếu thay linh kiện."
+    },
+    {
+      "id": 17,
+      "name": "Thay block, quạt tủ lạnh",
+      "price": 500000,
+      "notes": "Chưa bao gồm giá linh kiện."
+    },
+    {
+      "id": 18,
+      "name": "Sửa máy giặt không hoạt động",
+      "price": 280000,
+      "notes": "Phụ phí nếu thay board mạch."
+    },
+    {
+      "id": 19,
+      "name": "Kiểm tra và thay tụ điện, board mạch",
+      "price": 200000,
+      "notes": "Giá linh kiện tính riêng."
+    },
+    {
+      "id": 20,
+      "name": "Lắp đặt máy lạnh, máy giặt",
+      "price": 250000,
+      "notes": "Chưa bao gồm phụ kiện lắp đặt."
+    },
+    {
+      "id": 21,
+      "name": "Sửa máy nước nóng lạnh",
+      "price": 180000,
+      "notes": "Phụ phí nếu thay thanh nhiệt."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "email": "test@example.com",
+    "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "name": "Test",
+    "phone": "0901234567",
+    "createdAt": "2025-05-30T05:59:42.328Z"
+  },
+  {
+    "id": 2,
+    "email": "K61.2212155156@ftu.edu.vn",
+    "password": "d5a0b73c3dd9f9cc18bdeb7f1f37b21450051cb15a2960058ce69ba73b71ad02",
+    "name": "Khuu Thien Nhan",
+    "phone": "0842386051",
+    "createdAt": "2025-05-30T06:05:26.786Z"
+  }
+]
