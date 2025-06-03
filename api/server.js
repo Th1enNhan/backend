@@ -6,12 +6,7 @@ const crypto = require('crypto');
 const app = express();
 
 // Cấu hình CORS
-app.use(cors({
-    origin: 'http://localhost:8080',
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: false
-}));
+app.use(cors());
 
 app.options('*', cors());
 
